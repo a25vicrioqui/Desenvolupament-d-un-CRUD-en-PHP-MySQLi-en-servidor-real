@@ -1,4 +1,3 @@
-<?php?>
 <?php
 $mysqli = include_once "conexion.php";
 $id = $_POST["id"];

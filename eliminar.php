@@ -1,4 +1,3 @@
-<?php?>
 <?php
 if (!isset($_GET["id"])) {
     exit("No hay id");

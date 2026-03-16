@@ -1,4 +1,3 @@
-<?php?>
 <?php
 include_once "encabezado.php";
 $mysqli = include_once "conexion.php";

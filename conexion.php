@@ -1,4 +1,3 @@
-<?php?>
 <?php
 $host = "localhost";
 $usuario = "a25vicrioqui_videojuego";
