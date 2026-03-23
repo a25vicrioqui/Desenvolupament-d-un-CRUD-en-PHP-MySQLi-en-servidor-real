@@ -33,7 +33,11 @@ $videojuegos = $resultado->fetch_all(MYSQLI_ASSOC);
                         <td><?php echo $videojuego["id"]; ?></td>
                         <td><?php echo $videojuego["nombre"]; ?></td>
                         <td><?php echo $videojuego["descripcion"]; ?></td>
-                        <td><?php echo $videojuego["categoria"]; ?></td>
+                        <td>
+                            <span class="categoria-<?php echo strtolower($videojuego["categoria"]); ?>">
+                            <?php echo $videojuego["categoria"]; ?>
+                            </span>
+                        </td>
                         <td>
                             <a class="btn btn-primary btn-sm" href="editar.php?id=<?php echo $videojuego["id"]; ?>">Editar</a>
                         </td>
