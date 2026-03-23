@@ -2,7 +2,7 @@
 include_once "encabezado.php";
 
 $mysqli = include_once "conexion.php";
-$resultado = $mysqli->query("SELECT id, nombre, descripcion FROM videojuegos");
+$resultado = $mysqli->query("SELECT id, nombre, descripcion, categoria FROM videojuegos");
 $videojuegos = $resultado->fetch_all(MYSQLI_ASSOC);
 ?>
 <div class="container my-4">
@@ -18,29 +18,31 @@ $videojuegos = $resultado->fetch_all(MYSQLI_ASSOC);
             <div class="table-responsive">
                 <table class="table table-striped table-hover align-middle">
                     <thead class="table-dark">
-                        <tr>
-                            <th>ID</th>
-                            <th>Nombre</th>
-                            <th>Descripción</th>
-                            <th>Editar</th>
-                            <th>Eliminar</th>
-                        </tr>
-                    </thead>
-                    <tbody>
-                        <?php foreach ($videojuegos as $videojuego) { ?>
-                            <tr>
-                                <td><?php echo $videojuego["id"]; ?></td>
-                                <td><?php echo $videojuego["nombre"]; ?></td>
-                                <td><?php echo $videojuego["descripcion"]; ?></td>
-                                <td>
-                                    <a class="btn btn-primary btn-sm" href="editar.php?id=<?php echo $videojuego["id"]; ?>">Editar</a>
-                                </td>
-                                <td>
-                                    <a class="btn btn-danger btn-sm" href="eliminar.php?id=<?php echo $videojuego["id"]; ?>">Eliminar</a>
-                                </td>
-                            </tr>
-                        <?php } ?>
-                    </tbody>
+    <tr>
+        <th>ID</th>
+        <th>Nombre</th>
+        <th>Descripción</th>
+        <th>Categoría</th>
+        <th>Editar</th>
+        <th>Eliminar</th>
+    </tr>
+        </thead>
+            <tbody>
+                <?php foreach ($videojuegos as $videojuego) { ?>
+                    <tr>
+                        <td><?php echo $videojuego["id"]; ?></td>
+                        <td><?php echo $videojuego["nombre"]; ?></td>
+                        <td><?php echo $videojuego["descripcion"]; ?></td>
+                        <td><?php echo $videojuego["categoria"]; ?></td>
+                        <td>
+                            <a class="btn btn-primary btn-sm" href="editar.php?id=<?php echo $videojuego["id"]; ?>">Editar</a>
+                        </td>
+                        <td>
+                            <a class="btn btn-danger btn-sm" href="eliminar.php?id=<?php echo $videojuego["id"]; ?>">Eliminar</a>
+                        </td>
+                    </tr>
+                <?php } ?>
+        </tbody>
                 </table>
             </div>
         </div>

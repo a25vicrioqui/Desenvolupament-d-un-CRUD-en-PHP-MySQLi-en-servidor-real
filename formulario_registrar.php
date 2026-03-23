@@ -15,6 +15,17 @@
                             <label for="descripcion" class="form-label">Descripción</label>
                             <textarea name="descripcion" id="descripcion" class="form-control" placeholder="Descripción" rows="6" required></textarea>
                         </div>
+                        <div class="mb-3">
+                            <label for="categoria" class="form-label">Categoría</label>
+                            <select name="categoria" id="categoria" class="form-select" required>
+                                <option value="" disabled selected>Selecciona una categoría</option>
+                                <option value="Deporte">Deporte</option>
+                                <option value="Disparos">Disparos</option>
+                                <option value="Pelea">Pelea</option>
+                                <option value="Chill">Chill</option>
+                                <option value="Supervivencia">Supervivencia</option>
+                            </select>
+                        </div>
                         <div class="d-grid">
                             <button type="submit" class="btn btn-success btn-lg">Guardar</button>
                         </div>
