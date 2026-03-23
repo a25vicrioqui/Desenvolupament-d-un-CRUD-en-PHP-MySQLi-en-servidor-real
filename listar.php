@@ -28,16 +28,27 @@ $videojuegos = $resultado->fetch_all(MYSQLI_ASSOC);
     </tr>
         </thead>
             <tbody>
-                <?php foreach ($videojuegos as $videojuego) { ?>
-                    <tr>
+                <?php foreach ($videojuegos as $videojuego) {
+                    if ($videojuego["categoria"] == "Deporte"){
+                        $color = "table-success";
+                    }else if ($videojuego["categoria"] == "Disparos"){
+                        $color = "table-danger";
+                    }else if ($videojuego["categoria"] == "Pelea"){
+                        $color = "table-warning";
+                    }else if ($videojuego["categoria"] == "Chill"){
+                        $color = "table-info";
+                    }else if ($videojuego["categoria"] == "Supervivencia"){
+                        $color = "table-secondary";
+                    }else {
+                        $color = "table-light";
+                    }
+
+                    ?>
+                    <tr class="<?php echo $color ?> ">
                         <td><?php echo $videojuego["id"]; ?></td>
                         <td><?php echo $videojuego["nombre"]; ?></td>
                         <td><?php echo $videojuego["descripcion"]; ?></td>
-                        <td>
-                            <span class="categoria-<?php echo strtolower($videojuego["categoria"]); ?>">
-                            <?php echo $videojuego["categoria"]; ?>
-                            </span>
-                        </td>
+                        <td><?php echo $videojuego["categoria"]; ?></td>
                         <td>
                             <a class="btn btn-primary btn-sm" href="editar.php?id=<?php echo $videojuego["id"]; ?>">Editar</a>
                         </td>
