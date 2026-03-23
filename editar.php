@@ -36,6 +36,7 @@ if (!$videojuego) {
                     <option value="Supervivencia" <?php if($videojuego["categoria"]=="Supervivencia") echo "selected"; ?>>Supervivencia</option>
                 </select>
             </div>
+            <br>
             <div class="form-group">
                 <button class="btn btn-success">Guardar</button>
                 <a class="btn btn-warning" href="listar.php">Volver</a>
